@@ -43,7 +43,7 @@ List<Product> products = pd.getAllProducts();
 						<h5 class="price">Price: $<%= p.getPrice() %></h5>
 						<h5 class="category">Category: <%= p.getCategory() %></h5>
 						<div class="mt-3 d-flex justify-content-between">
-							<a href="#" class="btn btn-dark">Add to Cart</a> 
+							<a href="add-to-cart?id=<%=p.getId() %>" class="btn btn-dark">Add to Cart</a> 
 							<a href="#"
 								class="btn btn-primary">Buy Now</a>
 						</div>
