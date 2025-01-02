@@ -15,6 +15,11 @@ if (auth != null) {
 <%
 ProductDao pd = new ProductDao(DbCon.getConnection());
 List<Product> products = pd.getAllProducts();
+
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+if (cart_list != null) {
+	request.setAttribute("cart_list", cart_list);
+}
 %>
 
 <!DOCTYPE html>
@@ -44,7 +49,7 @@ List<Product> products = pd.getAllProducts();
 						<h5 class="category">Category: <%= p.getCategory() %></h5>
 						<div class="mt-3 d-flex justify-content-between">
 							<a href="add-to-cart?id=<%=p.getId() %>" class="btn btn-dark">Add to Cart</a> 
-							<a href="#"
+							<a href="order-now?quantity=1&id=<%=p.getId() %>"
 								class="btn btn-primary">Buy Now</a>
 						</div>
 					</div>
