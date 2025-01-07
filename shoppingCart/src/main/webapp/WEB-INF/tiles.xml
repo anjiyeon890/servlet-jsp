@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/includes/base.jsp">
+		<put-attribute name="header" value="/includes/head.jsp" />
+		<put-attribute name="navbar" value="/includes/navbar.jsp" />
+		<put-attribute name="content" value="" />	
+		<put-attribute name="footer" value="/includes/footer.jsp" />
+	</definition>
+	
+	<definition name="cart" extends="baseLayout">
+		<put-attribute name="content" value="/cart.jsp"/>
+	</definition>
+	
+	<definition name="index" extends="baseLayout">
+		<put-attribute name="content" value="/index.jsp"/>
+	</definition>
+	
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="content" value="/login.jsp"/>
+	</definition>
+	
+	<definition name="order" extends="baseLayout">
+		<put-attribute name="content" value="/order.jsp"/>
+	</definition>
+
+
+
+</tiles-definitions>      
+       

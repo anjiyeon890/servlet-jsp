@@ -22,16 +22,6 @@ if (cart_list != null) {
 }
 %>
 
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>Welcome to Shopping Cart</title>
-<%@include file="includes/head.jsp"%>
-</head>
-<body>
-	<%@include file="includes/navbar.jsp"%>
-
 	<div class="container">
 		<div class="card-header my-3">All Product</div>
 		<div class="row">
@@ -59,7 +49,3 @@ if (cart_list != null) {
 			}%>
 		</div>
 	</div>
-
-	<%@include file="includes/head.jsp"%>
-</body>
-</html>

@@ -60,13 +60,18 @@ public class OrderNowServlet extends HttpServlet {
 						}
 
 					}
-					response.sendRedirect("order.jsp");
+//					response.sendRedirect("order.jsp");
+					request.setAttribute("tileName", "order");
+					request.getRequestDispatcher("/includes/order.jsp").forward(request, response);
+					
 				} else {
 					writer.println("order fail");
 				}
 
 			} else {
-				response.sendRedirect("login.jsp");
+//				response.sendRedirect("login.jsp");
+				request.setAttribute("tileName", "login");
+				request.getRequestDispatcher("/includes/login.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {

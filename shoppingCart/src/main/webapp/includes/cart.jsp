@@ -25,27 +25,8 @@ if (cart_list != null) {
 	request.setAttribute("total", total);
 }
 %>
-<!DOCTYPE html>
-<html>
-<head>
 
-<title>Cart Page</title>
-<%@include file="includes/head.jsp"%>
-<style type="text/css">
-.table tbody td {
-	vertical-align: middle;
-}
-
-.btn-incre, .btn-decre {
-	box-shadow: none;
-	font-size: 25px;
-}
-</style>
-</head>
-<body>
-
-	<%@include file="includes/navbar.jsp"%>
-
+<main>
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Total Price: $ ${ (total>0)?dcf.format(total):0 }</h3>
@@ -72,7 +53,8 @@ if (cart_list != null) {
 					<td><%=c.getCategory()%></td>
 					<td><%=dcf.format(c.getPrice())%></td>
 					<td>
-						<form action="order-now" method="post" class="d-flex" style="justify-content: center;">
+						<form action="order-now" method="post" class="d-flex"
+							style="justify-content: center;">
 							<input type="hidden" name="id" value=<%=c.getId()%>
 								class="form-input w-50">
 							<div class="form-group d-flex justify-between w-50">
@@ -89,7 +71,8 @@ if (cart_list != null) {
 						</form>
 
 					</td>
-					<td><a class="btn btn-sm btn-danger" href="remove-from-cart?id=<%= c.getId() %>">Remove</a></td>
+					<td><a class="btn btn-sm btn-danger"
+						href="remove-from-cart?id=<%=c.getId()%>">Remove</a></td>
 				</tr>
 
 				<%
@@ -106,8 +89,6 @@ if (cart_list != null) {
 
 
 	</div>
+</main>
 
 
-	<%@include file="includes/head.jsp"%>
-</body>
-</html>

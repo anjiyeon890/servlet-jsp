@@ -24,14 +24,7 @@ if (cart_list != null) {
 	request.setAttribute("cart_list", cart_list);
 }
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<%@include file="/includes/head.jsp"%>
-<title>E-Commerce Cart</title>
-</head>
-<body>
-	<%@include file="/includes/navbar.jsp"%>
+
 	<div class="container">
 		<div class="card-header my-3">All Orders</div>
 		<table class="table table-light">
@@ -67,6 +60,4 @@ if (cart_list != null) {
 			</tbody>
 		</table>
 	</div>
-	<%@include file="/includes/footer.jsp"%>
-</body>
-</html>
+	

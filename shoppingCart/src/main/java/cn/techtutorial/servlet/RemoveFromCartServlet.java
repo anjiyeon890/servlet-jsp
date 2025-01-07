@@ -35,9 +35,13 @@ public class RemoveFromCartServlet extends HttpServlet {
 					}
 
 				}
-				response.sendRedirect("cart.jsp");
+//				response.sendRedirect("cart.jsp");
+				request.setAttribute("tileName", "cart");
+				request.getRequestDispatcher("/includes/cart.jsp").forward(request, response);
 			} else {
-				response.sendRedirect("cart.jsp");
+//				response.sendRedirect("cart.jsp");
+				request.setAttribute("tileName", "cart");
+				request.getRequestDispatcher("/includes/cart.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

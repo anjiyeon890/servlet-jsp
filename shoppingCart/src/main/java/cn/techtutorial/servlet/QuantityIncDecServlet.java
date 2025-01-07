@@ -31,7 +31,9 @@ public class QuantityIncDecServlet extends HttpServlet {
 							int quantity = c.getQuantity();
 							quantity++;
 							c.setQuantity(quantity);
-							response.sendRedirect("cart.jsp");
+//							response.sendRedirect("cart.jsp");
+							request.setAttribute("tileName", "cart");
+							request.getRequestDispatcher("/includes/cart.jsp").forward(request, response);
 						}
 					}
 				}
@@ -45,10 +47,14 @@ public class QuantityIncDecServlet extends HttpServlet {
 							break;
 						}
 					}
-					response.sendRedirect("cart.jsp");
+//					response.sendRedirect("cart.jsp");
+					request.setAttribute("tileName", "cart");
+					request.getRequestDispatcher("/includes/cart.jsp").forward(request, response);
 				}
 			} else {
-				response.sendRedirect("cart.jsp");
+//				response.sendRedirect("cart.jsp");
+				request.setAttribute("tileName", "cart");
+				request.getRequestDispatcher("/includes/cart.jsp").forward(request, response);
 			}
 		}
 	}

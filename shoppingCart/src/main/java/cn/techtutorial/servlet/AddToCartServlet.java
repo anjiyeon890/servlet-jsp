@@ -39,7 +39,9 @@ public class AddToCartServlet extends HttpServlet {
 			if (cart_list == null) {
 				cartList.add(cart);
 				session.setAttribute("cart-list", cartList);
-				response.sendRedirect("index.jsp");
+//				response.sendRedirect("index.jsp");
+				request.setAttribute("tileName", "index");
+				request.getRequestDispatcher("/includes/index.jsp").forward(request, response);
 			} else {
 
 				for (int i = 0; i < cart_list.size(); i++) {
@@ -55,7 +57,10 @@ public class AddToCartServlet extends HttpServlet {
 				} else {
 					cartList.add(cart);
 					session.setAttribute("cart-list", cartList);
-					response.sendRedirect("index.jsp");
+//					response.sendRedirect("index.jsp");
+					request.setAttribute("tileName", "index");
+					request.getRequestDispatcher("/includes/index.jsp").forward(request, response);					
+					
 				}
 
 			}

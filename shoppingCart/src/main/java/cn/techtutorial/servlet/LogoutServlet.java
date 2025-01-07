@@ -21,10 +21,14 @@ public class LogoutServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 			if (request.getSession().getAttribute("auth") != null) {
 				request.getSession().removeAttribute("auth");
-				response.sendRedirect("login.jsp");
+//				response.sendRedirect("login.jsp");
+				request.setAttribute("tileName", "login");
+				request.getRequestDispatcher("/includes/login.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
-			response.sendRedirect("index.jsp");
+//			response.sendRedirect("index.jsp");
+			request.setAttribute("tileName", "index");
+			request.getRequestDispatcher("/includes/index.jsp").forward(request, response);
 		}
 
 	}

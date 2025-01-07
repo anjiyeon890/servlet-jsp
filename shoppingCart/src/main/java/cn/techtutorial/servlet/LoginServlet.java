@@ -22,7 +22,9 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("login.jsp");
+//		response.sendRedirect("login.jsp");
+		request.setAttribute("tileName", "login");
+		request.getRequestDispatcher("/includes/login.jsp").forward(request, response);
 
 	}
 
@@ -36,15 +38,17 @@ public class LoginServlet extends HttpServlet {
 			try {
 				UserDao uDao = new UserDao(DbCon.getConnection());
 				User user = uDao.userLogin(email, password);
-				
+
 				if (user != null) {
 					out.print("user login");
 					request.getSession().setAttribute("auth", user);
-					response.sendRedirect("index.jsp");
-				}else {
+//					response.sendRedirect("index.jsp");
+					request.setAttribute("tileName", "index");
+					request.getRequestDispatcher("/includes/index.jsp").forward(request, response);
+				} else {
 					out.print("user login failed");
 				}
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

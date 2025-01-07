@@ -30,7 +30,9 @@ public class CancelOrderServlet extends HttpServlet {
 				orderDao.cancelOrder(Integer.parseInt(id));
 				
 			}
-			response.sendRedirect("order.jsp");
+//			response.sendRedirect("order.jsp");
+			request.setAttribute("tileName", "order");
+			request.getRequestDispatcher("/includes/order.jsp").forward(request, response);
 
 		} catch (Exception e) {
 			// TODO: handle exception
